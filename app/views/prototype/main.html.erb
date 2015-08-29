@@ -1,0 +1,20 @@
+<!-- map canvas -->
+<div class="map-canvas" id="map"></div>
+
+<!-- user position marker -->
+<%= render partial: 'partials/user_position_marker' %>
+
+<!-- panels -->
+<%= render partial: 'partials/filter_panel' %>
+
+<!-- dm panels -->
+<%= render partial: 'partials/dm_panel' %>
+
+
+<%= content_for :handwrite_js do %>
+  <script>
+    $(document).ready(JoinFuns.initialMap());
+    $(document).ready(JoinFuns.initMaterialSelect());
+    $(document).ready(JoinFuns.filterTriggerInit());
+  </script>
+<% end %>

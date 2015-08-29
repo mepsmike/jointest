@@ -1,0 +1,9 @@
+{
+  "name": "dsl-generated dependencies",
+  "dependencies": {
+    "susy": "latest",
+    "breakpoint-sass": "latest",
+    "sassy-buttons": "git://github.com/FunnyQ/Sassy-Buttons#compass-mixins",
+    "compass-mixins": "git://github.com/FunnyQ/compass-mixins#master"
+  }
+}

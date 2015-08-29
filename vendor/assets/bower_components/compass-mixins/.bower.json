@@ -1,0 +1,33 @@
+{
+  "name": "compass-mixins",
+  "authors": [
+    "Guillaume Balaine <igosuki@gmail.com>",
+    "Michael Heillein <michaek>"
+  ],
+  "description": "Compass stylesheets",
+  "main": "lib/_compass.scss",
+  "keywords": [
+    "compass",
+    "mixins",
+    "sass",
+    "css3"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "homepage": "https://github.com/FunnyQ/compass-mixins",
+  "_release": "e6a11f5f42",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "e6a11f5f421e33e3fa3d96e848be14b6afe8d666"
+  },
+  "_source": "git://github.com/FunnyQ/compass-mixins.git",
+  "_target": "master",
+  "_originalSource": "git://github.com/FunnyQ/compass-mixins"
+}

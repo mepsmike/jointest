@@ -1,0 +1,281 @@
+%border-layout
+  border: 1px solid $grayish
+  +border-radius(6px)
+
+
+.dm-page-wrapper
+  width: 100%
+  padding: 10px
+  background: rgba(255,255,255,1)
+  width: $b-desktop
+  @extend %m0auto
+  .dm-page-path
+
+
+  .page-promotion
+    padding: 20px
+    width: 100%
+    +box-shadow(0 0 10px $grayish)
+    +clearfix
+    @extend %border-layout
+    .page-title
+      @extend %m0auto
+      font-size: $fz-xl
+
+
+
+    .poster-wrapper
+      float: left
+      width: 40%
+      display: block
+      padding-right: 10px
+      img
+        display: block
+        width: 100%
+        // background-image: asset-url('target@2x.png')
+        // @extend %bg-cover-image
+
+
+
+    .page-description
+      @extend %m0auto
+      position: relative
+      float: right
+      width: 60%
+      padding: 0 30px
+      height: 450px
+
+      .page-info
+        font-size: $fz-m
+        line-height: 2em
+
+      ul li
+        list-style-type: initial
+        list-style-position: inside
+
+
+      .page-event-price
+        font-family: $font-family-sans-serif
+        border-top: 2px solid $gray
+        padding: 15px 0
+        .price
+          color: $gray
+          display: inline-block
+          padding: 0 .5em
+          margin-left: .5em
+          +border-radius(5px)
+          cursor: pointer
+          font-size: $fz-l
+          &.actived
+            border: 1px solid $red
+            color: $red
+
+      .page-options-wrapper
+        $btn-height: 40px
+        position: absolute
+        +clearfix
+        width: 90.7%
+        padding: 10px 0
+        bottom: 0
+        border-top: 2px solid $gray
+        ul
+          +reset-list-style
+          +reset-box-model
+          li
+            +reset-box-model
+            display: block
+            +span(4 of 12)
+            padding: 0 5px
+
+
+        .share
+          background: $facebook-blue
+        .favorite
+          background: $grayish
+        .join
+          background: $yellow
+
+        .option
+          display: block
+          width: 100%
+          height: $btn-height
+          line-height: $btn-height
+          text-align: center
+          color: $white
+          +border-radius(20px)
+
+
+/////////////////next sheet///////
+
+
+.page-secondary
+  @extend %border-layout
+  margin-top: 20px
+  padding: 20px
+  width: 100%
+  +box-shadow(0 0 10px $grayish)
+  +clearfix
+  .page-editor
+    float: left
+    width: 70%
+    padding: 10px
+    border: 2px solid $grayish
+    +border-radius(6px)
+    .ck-editor
+      min-height: 600px
+      border: 1px solid $grayish
+      +border-radius(6px)
+
+    .leaveword
+      width: 100%
+      height: 180px
+      padding: 12px
+      margin-top: 10px
+      color: $gray
+      font-size: $fz-l
+      @extend %border-layout
+
+
+      textarea
+        @extend %border-layout
+        height: 75px
+
+      .submit
+        $submit-height: 45px
+        float: right
+        width: 150px
+        color: $white
+        height: $submit-height
+        line-height: $submit-height
+        text-align: center
+        background: $grayish
+        +border-radius(4px)
+        cursor: pointer
+
+    .page-msg-wrapper
+      $unit-height: 35px
+      @extend %border-layout
+      height: 220px
+      padding: 15px
+      margin-top: 40px
+      overflow-y: auto
+      .unit-wrapper
+        border-bottom: 2px solid $grayish
+        +clearfix
+        padding: 10px
+        .avatar
+          +span(1)
+          // width: 35px
+          // height: 35px
+          img
+            width: $unit-height
+            height: $unit-height
+            display: block
+            +border-radius(50%)
+        .name
+          +span(2)
+          white-space: nowrap
+          overflow: hidden
+          text-overflow: ellipsis
+          line-height: $unit-height
+          +word-break(break-all)
+
+        .leave-msg
+          +span(9)
+          padding: 6px
+
+
+  .shorten-dm-wrapper
+    float: left
+    width: 30%
+    padding: 0 5px
+    .main-title
+      background: $yellow
+      height: 30px
+      width: 100%
+      line-height: 30px
+      text-align: center
+    .unit-shorten-cover
+      height: 1000px
+      overflow-y: auto
+
+      .unit-shorten-dm
+        position: relative
+        border: 1px solid $grayish
+        padding: 5px
+        +clearfix
+
+        .shorten-close-btn
+          position: absolute
+          // z-index: index($elements, shorten-dm-close-btn)
+          font-size: $fz-m
+          color: $silver
+          cursor: pointer
+          top: 10px
+          right: 10px
+
+
+        .shorten-dm-cover
+           float: left
+           width: 100px
+           height: 100px
+           @extend %bg-cover-image
+
+        .info-wrapper
+          font-size: $fz-s
+          float: left
+          padding: 0 5px
+          width: calc(100% - 100px)
+          .title
+            +reset-box-model
+            font-size: $fz-xl
+            margin: 2px 0
+            &:before
+              display: inline-block
+              content: ""
+              margin-right: 5px
+              margin-bottom: -5px
+              width: 20px
+              height: 20px
+              @extend %bg-cover-image
+            &.dm:before
+              background-image: asset-url('dm-icon@2x.png')
+            &.event:before
+              background-image: asset-url('event-icon@2x.png')
+
+
+
+          .shorten-price
+            color: $money-golden
+            font-family: $font-family-sans-serif
+            .price
+              display: inline-block
+              padding: 0 .2em
+              margin: 5px 0
+              margin-left: .2em
+              +border-radius(6px)
+              cursor: pointer
+              &.actived
+                border: 2px solid $orange
+                color: $orange
+
+          .option-wrapper
+            $btn-height: 25px
+            +clearfix
+            .join
+              +sassy-button("flat", 6px, 12px, $faded-orange)
+            .option
+              padding: 0
+              width: 50%
+              height: $btn-height
+              text-align: center
+              line-height: $btn-height
+              float: left
+            .join-count
+              float: left
+              width: 50%
+              text-align: right
+              padding-right: 10px
+              padding-top: 8px
+              color: $faded-orange
+

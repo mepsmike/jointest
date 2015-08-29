@@ -1,0 +1,13 @@
+{
+  "name": "sassy-buttons",
+  "homepage": "https://github.com/FunnyQ/Sassy-Buttons",
+  "_release": "51bbb22c33",
+  "_resolution": {
+    "type": "branch",
+    "branch": "compass-mixins",
+    "commit": "51bbb22c3337e6046edc778cae122eb316228f60"
+  },
+  "_source": "git://github.com/FunnyQ/Sassy-Buttons.git",
+  "_target": "compass-mixins",
+  "_originalSource": "git://github.com/FunnyQ/Sassy-Buttons"
+}

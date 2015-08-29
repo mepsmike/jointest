@@ -1,0 +1,20 @@
+  # config/application.yml
+  defaults: &defaults
+    secret_key: '5c962011ac85e972c87dd5d3ca8fac1bdab6b116c442148ca028de057706009c1e50738e088a44c0bfa266c5f58e2548fb01fb05c1903778f57c3513cff56e44'
+    mysql:
+      database:
+      password:
+      username:
+    facebook:
+      app_id: "652196168244318"
+      secret: "f61dbe0f5b38e38ea8b887b088b29a17"
+
+  development:
+    <<: *defaults
+
+  test:
+    <<: *defaults
+
+  production:
+    <<: *defaults
+    secret_key: '1cc8b3b957be4218cb79d3f7131d53c8226beed074542aaff3082e66dfa624b1d2e8a98dc2dabac3c837204f9ab163c6af86ac8633290b6491baffa005005093' # `rake secret` to generate one

@@ -1,0 +1,278 @@
+// *************************************
+//
+//   Basic layout
+//   基本排版設定
+//
+// *************************************
+
+// centering Bootstrap modal
+#confirmationDialog .modal-dialog
+  position: absolute
+  top: 50%
+  left: 50%
+  +transform(translate(-50%, -100%))
+
+html, body
+  width: 100%
+  height: 100%
+
+nav
+  background: none
+
+%m0auto
+  margin: 0 auto
+
+%bg-cover-image
+  +background-size(cover)
+  background-position: center
+  background-repeat: no-repeat
+
+%landing-panel-style
+  background-color: $c-panels
+  margin-top: 1em
+  +border-radius(6px)
+%landing-form-style
+  input, input:focus
+    margin-bottom: 0
+    padding: 3em
+    text-align: center
+    +box-sizing(border-box)
+    border-bottom: 1px solid $gray
+    +box-shadow(none)
+  .input-field
+    margin-top: 0
+  .submit-btn
+    display: block
+    padding: 1em
+    button, span
+      +sassy-button("flat", $v-radius, $fz-l, $yellow)
+      width: 100%
+      padding: 1em 0
+
+%subject-info-basic
+  h3
+    margin: 0
+    padding: 0
+    font-size: $fz-l
+    font-weight: bold
+  .progress
+    height: 12px
+    margin-top: 1em
+    margin-bottom: .2em
+    background-color: $light-gray
+    +border-radius(50px)
+    border: 2px solid $dark-gray
+    .determinate
+      background-color: $yellow
+      +border-radius(50px)
+      border-right: 2px solid $dark-gray
+  .time-info-wrapper
+    +clearfix
+    color: $golden
+    text-align: center
+    .hour, .minute, .second
+      +span(4)
+      .value
+        display: block
+        font-size: 40px
+      .unit
+        font-size: $fz-xs
+
+.landing-container
+  width: 100%
+  height: 100%
+  @extend %bg-cover-image
+  overflow: scroll
+  z-index: index($elements, application-container)
+  text-align: center
+
+.map-view-container
+  position: absolute
+  top: 0
+  right: 0
+  bottom: 0
+  left: 0
+
+.application-container
+  padding-bottom: $v-footer-height + 20px
+
+.main-navibar
+  $logo-width: 108px
+
+  +box-sizing(content-box)
+  position: relative
+  height: $v-navi-height
+  background-image: asset-url('menu-bg.png')
+  background-size: 9px
+  background-color: $main-navi
+
+  z-index: index($elements, main-navibar)
+  +box-shadow(none)
+  border-bottom: $v-navi-border solid darken($yellow, 20)
+  text-align: center
+  .logo-wrapper
+    +span(3)
+    height: $v-navi-height
+    font-size: $fz-l
+    img
+      display: inline-block
+      width: $logo-width
+  .main-menu
+    li
+      +span(3)
+      height: $v-navi-height
+      line-height: $v-navi-height
+      i
+        color: $dark-gray
+        position: relative
+        top: 6px
+      &:hover i
+        color: $black
+
+      a
+        color: $dark-gray
+        font-weight: 600
+        display: inline
+      &:hover a
+        color: $black
+    .user-menu-trigger a
+      padding: 0
+      &:first-child
+        +span(8)
+        display: block
+        padding-top: 5px
+        i
+          font-size: $fz-xl
+          padding-left: .2em
+          top: 5px
+          float: right //gear
+
+      &:last-child
+        +span(4)
+        display: block
+        padding-top: 1px
+        text-align: center
+
+
+    .user-avatar
+      display: block
+      float: left
+      width: 30px
+      height: 30px
+      img
+        border: 3px solid $white
+    .user-name
+      display: block
+      float: left
+      margin-top: -4px
+      margin-left: .5em
+      height: 30px
+
+      overflow: hidden
+      text-overflow: ellipsis
+      white-space: nowrap
+
+.main-function-bar-wrapper
+  position: relative
+  height: $v-function-bar-height
+  background-color: $black-op85
+  border-bottom: 1px solid $silver
+  z-index: index($elements, main-function-bar)
+  color: $yellow
+  .filter-trigger
+    +span(3)
+    height: $v-function-bar-height
+    line-height: $v-function-bar-height
+    text-align: left
+    cursor: pointer
+    text-align: center
+    +noselect
+    span
+      margin: 0 8px
+    i:last-child
+      font-size: $fz-l
+
+
+
+
+
+  .search-form-wrapper
+    +span(9)
+    .search-form-input
+      +span(8)
+      padding: 4px 1.5em
+      border-right: 1px solid $gray
+      border-left: 1px solid $gray
+      input, input:focus
+        height: 24px
+        margin: 0
+        color: $white
+        background-color: rgba($white, .1)
+        border: 1px solid darken($white, 50)
+        +border-radius(100px 100px)
+        +box-sizing(border-box)
+        padding-right: 60px
+        text-align: center
+      input[placeholder]
+        text-align: center
+        color: darken($white, 30)
+      .search-button
+        position: absolute
+        top: 6px
+        right: 25%
+        margin-right: 25px
+        button
+          height: 20px
+          line-height: 20px
+          border: none
+          color: $white
+          background: $dark-yellow
+          +border-radius(25px)
+          i
+            padding: 0 20px
+            font-size: 18px
+
+    .short-button
+      +span(4)
+      padding: 5px
+      a
+        color: $yellow
+        +span(4 of 12)
+        display: block
+        height: 24px
+        line-height: 24px
+        background: none
+        border: none
+        text-align: center
+        &:last-child
+          border-left: 1px solid $yellow
+          line-height: 24px
+        &:first-child
+          i
+            float: right
+            font-size: 20px
+            margin-right: .3em
+            margin-top: 2px;
+          span
+            float: right
+
+.main-footer
+  position: fixed
+  bottom: 0
+  height: $v-footer-height
+  width: 100%
+  padding-top: 5px
+  padding-right: 2em
+  background-color: $black
+  color: $white
+  font-size: $fz-xs
+  text-align: right
+
+
+.map-canvas
+  position: absolute
+  top: $v-header-height
+  right: 0
+  bottom: $v-footer-height
+  left: 0
+  background-color: #eee
