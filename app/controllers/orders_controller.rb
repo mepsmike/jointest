@@ -42,6 +42,7 @@ class OrdersController < ApplicationController
     @payment = Payment.find_and_process(params)
     @payment.save
 
+
     render text: '1|OK', status: 200
   end
 
