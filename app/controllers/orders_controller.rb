@@ -34,13 +34,13 @@ class OrdersController < ApplicationController
   end
 
   def notify
-    notification = ActiveMerchant::Billing::Integrations::Allpay::Notification.new(request.raw_post)
+    #notification = ActiveMerchant::Billing::Integrations::Allpay::Notification.new(request.raw_post)
 
     order = Order.find(params[:id])
     order.paid? if params[:RtnCode] == "1"
 
-    @payment = Payment.find_and_process(notification)
-    @payment.save
+    # @payment = Payment.find_and_process(notification)
+    # @payment.save
 
     render text: '1|OK', status: 200
   end
