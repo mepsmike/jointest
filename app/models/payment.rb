@@ -18,8 +18,8 @@ class Payment < ActiveRecord::Base
     if self.paid
       o = self.order
       o.payment_status = "paid"
-      o.save( :validate => false )
       o.user.account = o.amount
+      o.save( :validate => false )
     end
   end
 
