@@ -41,6 +41,7 @@ class OrdersController < ApplicationController
 
     @payment = Payment.find_and_process(params)
     @payment.save
+    @payment.order.user.account+=params[:TradeAmt]
 
 
     render text: '1|OK', status: 200
