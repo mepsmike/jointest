@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150829153731) do
+ActiveRecord::Schema.define(version: 20150831033603) do
 
   create_table "collects", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -176,6 +176,7 @@ ActiveRecord::Schema.define(version: 20150829153731) do
     t.string   "fb_token"
     t.string   "image"
     t.string   "name"
+    t.decimal  "account"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

@@ -4,7 +4,6 @@ class Payment < ActiveRecord::Base
 
   after_update :update_order_status
 
-
   def self.find_and_process(params)
     payment = self.find_by_order_id(params[:id])
     payment.paid = params['RtnCode'] == '1'
@@ -20,6 +19,7 @@ class Payment < ActiveRecord::Base
       o = self.order
       o.payment_status = "paid"
       o.save( :validate => false )
+      o.user.account = o.amount
     end
   end
 
