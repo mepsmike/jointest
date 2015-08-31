@@ -6,8 +6,9 @@ class Payment < ActiveRecord::Base
 
 
   def self.find_and_process(params)
-    payment = self.find(params[:MerchantTradeNo].to_i)
+    payment = self.find_by_order_id(params[:id])
     payment.paid = params['RtnCode'] == '1'
+    payment.amount = params['TradeAmt']
     payment.params = params
     payment
   end
